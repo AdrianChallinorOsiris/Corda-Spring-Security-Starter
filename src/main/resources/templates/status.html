@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+
+<div class="container">
+    <h1>CORDA Status</h1>
+    <div class="starter-template">
+        <h2>Basic Status</h2>
+        <table style="border:1px solid black;">
+            <tbody>
+            <tr>
+                <td>Server Time:</td>
+                <td th:text="${servertime}"/>
+            </tr>
+            <tr>
+                <td>Addresses:</td>
+                <td th:text="${addresses}"/>
+            </tr>
+            <tr>
+                <td>Identities:</td>
+                <td th:text="${identities}"/>
+            </tr>
+            <tr>
+                <td>Version:</td>
+                <td th:text="${version}"/>
+            </tr>
+            <tr>
+                <td>Notaries:</td>
+                <td th:text="${notaries}"/>
+            </tr>
+            <tr>
+                <td>States:</td>
+                <td th:text="${states}"/>
+            </tr>
+            </tbody>
+        </table>
+        <h2>Peers</h2>
+        <table style="border:1px solid black;">
+            <tbody>
+            <tr th:each="p : ${peers}">
+                <td th:text="${p}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <h2>Flows</h2>
+        <table style="border:1px solid black;">
+            <tbody>
+            <tr th:each="f : ${flows}">
+                <td th:text="${f}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>
+
+<br>
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>

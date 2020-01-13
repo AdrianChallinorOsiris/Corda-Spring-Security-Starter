@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+>
+
+<head>
+    <title>Corda </title>
+</head>
+<body>
+<h1>Corda with Spring Security login</h1>
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form , id="login" method="post" th:action="@{/login}">
+    <table>
+        <tbody>
+        <tr>
+            <td>Username</td>
+            <td><input name="username" type="text" value="user1"/></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input name="password" type="password" value="test"/></td>
+        </tr>
+        <tr>
+            <td>Server</td>
+            <td><input name="server" type="text" value="bastet"/></td>
+        </tr>
+        <tr>
+            <td>Port</td>
+            <td><input name="port" type="text" value="10009"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Sign In"/></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

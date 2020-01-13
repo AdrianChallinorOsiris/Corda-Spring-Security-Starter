@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>CORDA Example</title>
+</head>
+<body>
+<h1>Welcome!</h1>
+You have managed to authenticate with CORDA if you got this far.
+<br>
+Here is where the interesting parts should happen.
+
+<p>Click <a th:href="@{/status}">here</a> to see the status.</p>
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
